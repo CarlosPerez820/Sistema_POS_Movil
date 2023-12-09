@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrito</ion-title>
+    <ion-back-button slot="start"defaultHref="/clientes"></ion-back-button >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <br>
+  <br>
+  <br>
+  
+<ion-item>
+  <ion-icon name="bag-outline"></ion-icon>
+  <ion-label>1 X Blusa  -   $240</ion-label>
+  <ion-icon name="caret-down-outline"  slot="end"></ion-icon>
+</ion-item>
+
+<ion-item lines="inset">
+  <ion-icon name="bag-outline"></ion-icon>
+  <ion-label>1 X Sombrero  -   $200</ion-label>
+  <ion-icon name="caret-down-outline"  slot="end"></ion-icon>
+</ion-item>
+
+<ion-item lines="full">
+  <ion-icon name="bag-outline"></ion-icon>
+  <ion-label>1 X Pantalon  -   $200</ion-label>
+  <ion-icon name="caret-down-outline"  slot="end"></ion-icon>
+</ion-item>
+
+<br>
+<br>
+<ion-label>
+  <h2>Subtotal: $640</h2>
+  <h2>Forma de pago: Efectivo</h2>
+  <h2>Se recibio: $700</h2>
+  <h2>Descuento: $0</h2>
+
+  <br>
+  <br>
+  <h2>Cambio: $60</h2>
+  <h2>Total: $640</h2>
+</ion-label>
+
+</ion-content>
+
+
+<ion-footer>
+
+  <ion-button expand="block" size="large">6 Productos = $640
+    <ion-icon name="arrow-forward-outline"></ion-icon>
+  </ion-button>
+
+</ion-footer>

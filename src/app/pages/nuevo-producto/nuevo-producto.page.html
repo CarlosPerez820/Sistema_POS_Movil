@@ -1,0 +1,142 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registra un nuevo producto</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+
+  <ion-card>
+    <ion-item fill="outline">
+      <ion-label position="stacked">NOMBRE DEL PRODUCTO:</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">DESCRIPCIÓN:</ion-label>
+      <ion-input [(ngModel)]="descripcion" name="descripcion"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">TALLA O NÚMERO:</ion-label>
+      <ion-input [(ngModel)]="talla" name="talla"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col>
+            <ion-label position="stacked">CATEGORIA:</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="Categoria" [(ngModel)]="categoria" name="categoria">
+                  <ion-select-option value="Accesorios">Accesorios</ion-select-option>
+                  <ion-select-option value="Vestidos">Vestidos</ion-select-option>
+                  <ion-select-option value="Pantalones">Pantalones</ion-select-option>
+                  <ion-select-option value="Zapatos">Zapatos</ion-select-option>
+                  <ion-select-option value="Blusas">Blusas</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-item>
+
+    <ion-item fill="outline">
+     <ion-label position="stacked">FOTO:</ion-label>
+      <ion-input type="file" (change)="getFile($event)" id="_fotoCliente"></ion-input> 
+
+      <ion-buttons><ion-button
+        color="secondary" (click)="sendFile()">
+        Subir Foto <ion-icon name="cloud-upload-outline"></ion-icon></ion-button></ion-buttons> 
+    </ion-item>
+  
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">PRECIO COMPRA:</ion-label>
+      <ion-input [(ngModel)]="precio_compra" name="precio_compra"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">PRECIO VENTA:</ion-label>
+      <ion-input [(ngModel)]="precio_venta" name="precio_venta"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">CANTIDAD:</ion-label>
+      <ion-input [(ngModel)]="cantidad" name="cantidad"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">MARCA:</ion-label>
+      <ion-input [(ngModel)]="marca" name="marca"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">CÓDIGO:</ion-label>
+      <ion-input [(ngModel)]="codigo" name="codigo"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">LIQUIDACIÓN:</ion-label>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col>
+
+            <ion-radio-group>
+
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio slot="end" (click)="cambioSi()"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio slot="end" (click)="cambioNo()"></ion-radio>
+              </ion-item>
+      
+            </ion-radio-group>
+      
+          </ion-col>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="descuento" [(ngModel)]="descuento" name="descuento">
+                  <ion-select-option value="0">0%</ion-select-option>
+                  <ion-select-option value="5">5%</ion-select-option>
+                  <ion-select-option value="10">10%</ion-select-option>
+                  <ion-select-option value="15">15%</ion-select-option>
+                  <ion-select-option value="20">20%</ion-select-option>
+                  <ion-select-option value="25">25%</ion-select-option>
+                  <ion-select-option value="30">30%</ion-select-option>
+                  <ion-select-option value="35">35%</ion-select-option>
+                  <ion-select-option value="40">40%</ion-select-option>
+                  <ion-select-option value="45">45%</ion-select-option>
+                  <ion-select-option value="50">50%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-item>
+    
+  
+  </ion-card>
+
+  <ion-card>
+    <ion-button fill="outline" (click)="guardarProducto()" expand="block">AGREGAR</ion-button>
+  </ion-card>
+
+
+</ion-content>

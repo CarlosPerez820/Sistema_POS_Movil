@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registra un cliente</ion-title>
+    <ion-back-button slot="start"defaultHref="/clientes"></ion-back-button >
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+
+
+
+  <ion-card>
+    <ion-item fill="outline">
+      <ion-label position="stacked">NOMBRE COMPLETO:</ion-label>
+      <ion-input  [(ngModel)]="nombre" name="nombre"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">TELEFONO DE CONTACTO:</ion-label>
+      <ion-input  [(ngModel)]="telefono" name="telefono"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">DIRECCIÓN:</ion-label>
+      <ion-input  [(ngModel)]="direccion" name="direccion"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">REDES SOCIALES:</ion-label>
+      <ion-input  [(ngModel)]="redes_sociales" name="redes_sociales"></ion-input>
+    </ion-item>
+
+  
+
+</ion-card>
+
+<ion-card>
+  <ion-button fill="outline" expand="block" (click)="guardarCliente()">Registrar</ion-button>
+</ion-card>
+
+
+</ion-content>

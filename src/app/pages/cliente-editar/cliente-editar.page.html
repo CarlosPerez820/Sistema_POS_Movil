@@ -1,0 +1,84 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar Cliente</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-card>
+    <ion-item fill="outline">
+      <ion-label position="stacked">NOMBRE COMPLETO:</ion-label>
+      <ion-input  [(ngModel)]="nombre" name="nombre"  value="{{clienteEspecifico.nombre}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">TELEFONO DE CONTACTO:</ion-label>
+      <ion-input  [(ngModel)]="telefono" name="telefono"  value="{{clienteEspecifico.telefono}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">DIRECCIÓN:</ion-label>
+      <ion-input  [(ngModel)]="direccion" name="direccion"  value="{{clienteEspecifico.direccion}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">REDES SOCIALES:</ion-label>
+      <ion-input  [(ngModel)]="redes_sociales" name="redes_sociales"  value="{{clienteEspecifico.redes_sociales}}"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">FECHA DE REGISTRO:</ion-label>
+      <ion-input  [(ngModel)]="fecha" name="fecha"  value="{{clienteEspecifico.fecha}}" readonly></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">PUNTOS:</ion-label>
+      <ion-input  [(ngModel)]="puntos" name="puntos"  value="{{clienteEspecifico.puntos}}" readonly></ion-input>
+    </ion-item>
+
+</ion-card>
+
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="outline" (click)="actualizar()" expand="block">Actualizar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="outline" id="open-modal" expand="block">Eliminar</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+        <div class="centrado"> realizar esta acción estara eliminando el producto de manera permanente
+        <br>
+        <br>
+        ¿Desea Continuar?
+      </div>
+    </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button fill="outline"
+            color="danger" (click)="eliminar()">Eliminar</ion-button>
+          </ion-col>
+
+          <ion-col>
+            <ion-button fill="outline"
+            color="danger" (click)="confirmacionEliminar()">Cancelar</ion-button>
+          </ion-col>
+    
+        </ion-row>
+      </ion-grid>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>

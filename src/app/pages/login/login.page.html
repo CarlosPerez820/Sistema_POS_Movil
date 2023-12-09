@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+
+</ion-header>
+
+<ion-content [fullscreen]="true" ion-menu>
+
+
+    <img src="assets/imagenes/logo_img.png"/>
+
+
+  <div class="centrado">
+    <h1>Inicio de Sesión</h1>
+    <h3>Ingrese su información de inicio de sesión para poder acceder a la aplicación</h3>
+  </div>
+<br>  
+ <!-- <div id="container">
+    <strong class="capitalize">Bienvenido a tu App para el control de tu Boutique Magenta</strong>
+    <p routerLink="/ventas">Desarrollado por AutomatizaCS SAS</p>
+  </div>
+-->
+
+<ion-card center>
+  <ion-item>
+    <ion-input placeholder="correo electronico"  [(ngModel)]="email" name="email"></ion-input>
+  </ion-item>
+</ion-card>
+
+<ion-card center>
+  <ion-item>
+    <ion-input placeholder="contraseña" type="password" [(ngModel)]="password" name="password"></ion-input>
+  </ion-item>
+</ion-card>
+
+<ion-card center>
+  <ion-button expand="block" (click)="login()">iniciar sesión
+  </ion-button>
+</ion-card>
+
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title color="primary" class="ion-text-center"
+    >Desarrollado por AutomatizaCS</ion-title>
+    <ion-thumbnail slot="start">
+      <img src="assets/imagenes/logo_aut.png"/>
+    </ion-thumbnail>
+  </ion-toolbar>
+</ion-footer>

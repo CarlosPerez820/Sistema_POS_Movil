@@ -1,0 +1,21 @@
+.centrado{
+    text-align: center;  
+  }
+
+ion-thumbnail {
+    --border-radius: 4px;
+  }
+
+  ion-toolbar {
+    --background: #c90e2d;
+    --color: rgb(255, 255, 255);
+  }
+
+  ion-fab-button {
+    --background:  #c90e2d;
+    --background-activated: #f5415f;
+    --background-hover: #e01839;
+    --border-radius: 15px;
+    --box-shadow: 0px 1px 2px 0px rgba(0,0,0,.3), 0px 1px 3px 1px rgba(0,0,0,.15);
+    --color: rgb(255, 255, 255);
+  }

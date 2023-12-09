@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Corte de caja</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+
+<ion-card>
+  <ion-card-header>
+    <ion-datetime color="rose"></ion-datetime>
+  </ion-card-header>
+</ion-card>
+
+<ion-card>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>Cantidad de productos vendidos</ion-col>
+      <ion-col>Total Vendido</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>0</ion-col>
+      <ion-col>$0</ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-card>
+
+<ion-accordion-group>
+  <ion-card>
+  <ion-accordion >
+    <ion-item slot="header" color="light">
+      <ion-label>Lista de las ventas
+        <ion-badge>0</ion-badge>
+      </ion-label>
+    </ion-item>
+      <div class="ion-padding" slot="content">
+          
+            <ion-label>
+              <h2>Folio: </h2>
+              <h2>Producto: </h2>
+              <p>Cantidad:</p>
+              <p>Total</p>
+            </ion-label>
+          
+      </div>
+  </ion-accordion>
+</ion-card>
+</ion-accordion-group>
+
+</ion-content>

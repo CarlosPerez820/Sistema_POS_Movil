@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Inventario</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-refresher slot="fixed" [pullFactor]="0.5" [pullMin]="100" [pullMax]="200" (ionRefresh)="handleRefresh($event)">
+    <ion-refresher-content>
+    </ion-refresher-content>
+  </ion-refresher>
+
+
+    <ion-searchbar placeholder="Buscar" animated="true" show-clear-button="focus" (ionChange)="barraBusqueda($event)"></ion-searchbar>
+
+  
+
+  
+<div class="centrado">
+  <h2>Tienes {{numProductos}} Productos</h2>
+</div>
+
+
+      <ion-list lines="full">
+
+        <ion-item button detail="true"  *ngFor="let producto of resultado;  let index" [routerLink]="['/editar-producto',producto._id]">
+          <ion-thumbnail slot="start">
+            <img alt="IMG" src="http://finapoyo-atlixco.com/{{producto.foto}}" />
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{producto.nombre}}</h2>
+            <p>Descripcion: {{producto.descripcion}}</p>
+            <p>Talla: {{producto.talla}}</p>
+            <p>Precio:  ${{producto.precio_venta}}</p>
+            <p>Cantidad: {{producto.cantidad}}</p>
+          </ion-label>
+        </ion-item>
+
+      </ion-list>
+<!--
+      <ion-infinite-scroll (ionInfinite)="onIonInfinite($event)">
+        <ion-infinite-scroll-content></ion-infinite-scroll-content>
+      </ion-infinite-scroll>
+-->
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end"  routerLink="/nuevo-producto">
+    <ion-fab-button>
+      <ion-icon name="add-outline" ></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  
+  
+</ion-content>

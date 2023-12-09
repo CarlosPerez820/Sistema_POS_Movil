@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Editar producto</ion-title>
+    <ion-back-button slot="start"></ion-back-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+ 
+  <ion-card>
+  <img src="http://finapoyo-atlixco.com/{{productoEspecifico.foto}}"/>
+</ion-card>
+
+  <ion-card>
+    <ion-item fill="outline">
+      <ion-label position="stacked">Nombre del producto:</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre" value="{{productoEspecifico.nombre}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">Descripción:</ion-label>
+      <ion-input [(ngModel)]="descripcion" name="descripcion" value="{{productoEspecifico.descripcion}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">Talla/Número:</ion-label>
+      <ion-input [(ngModel)]="talla" name="talla" value="{{productoEspecifico.talla}}"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col>
+            <ion-label position="stacked">CATEGORIA:</ion-label>
+          </ion-col>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="Categoria" [(ngModel)]="categoria" name="categoria" value="{{productoEspecifico.categoria}}">
+                  <ion-select-option value="Accesorios">Accesorios</ion-select-option>
+                  <ion-select-option value="Vestidos">Vestidos</ion-select-option>
+                  <ion-select-option value="Pantalones">Pantalones</ion-select-option>
+                  <ion-select-option value="Zapatos">Zapatos</ion-select-option>
+                  <ion-select-option value="Blusas">Blusas</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-item>
+    <!--
+    <ion-item fill="outline">
+      <ion-label position="stacked">Foto:</ion-label>
+      <ion-input [(ngModel)]="foto" name="foto" value="{{productoEspecifico.foto}}"></ion-input>
+    </ion-item>
+    -->
+
+
+    <ion-item fill="outline">
+    <ion-label position="stacked">FOTO:</ion-label>
+      <ion-input type="file" (change)="getFile($event)" id="_fotoCliente"></ion-input> 
+
+      <ion-buttons><ion-button
+        color="secondary" (click)="sendFile()">
+        Subir Foto <ion-icon name="cloud-upload-outline"></ion-icon></ion-button></ion-buttons> 
+    </ion-item>
+
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">Precio compra:</ion-label>
+      <ion-input [(ngModel)]="precio_compra" name="precio_compra" value="{{productoEspecifico.precio_compra}}"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">Precio venta:</ion-label>
+      <ion-input [(ngModel)]="precio_venta" name="precio_venta" value="{{productoEspecifico.precio_venta}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">Cantidad:</ion-label>
+      <ion-input [(ngModel)]="cantidad" name="cantidad" value="{{productoEspecifico.cantidad}}"></ion-input>
+    </ion-item>
+  
+    <ion-item fill="outline">
+      <ion-label position="stacked">Marca:</ion-label>
+      <ion-input [(ngModel)]="marca" name="marca" value="{{productoEspecifico.marca}}"></ion-input>
+    </ion-item>
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">Código:</ion-label>
+      <ion-input [(ngModel)]="codigo" name="codigo" value="{{productoEspecifico.codigo}}"></ion-input>
+    </ion-item>
+    
+
+    <ion-item fill="outline">
+      <ion-label position="stacked">LIQUIDACIÓN:</ion-label>
+      <ion-grid [fixed]="true">
+        <ion-row>
+          <ion-col>
+
+            <ion-radio-group [(ngModel)]="liquidacion" name="liquidacion" value="{{productoEspecifico.liquidacion}}">
+
+              <ion-item>
+                <ion-label>Si</ion-label>
+                <ion-radio value="Si"></ion-radio>
+              </ion-item>
+              <ion-item>
+                <ion-label>No</ion-label>
+                <ion-radio Value="No"></ion-radio>
+              </ion-item>
+      
+            </ion-radio-group>
+      
+          </ion-col>
+          <ion-col>
+            <ion-list>
+              <ion-item>
+                <ion-select placeholder="descuento" [(ngModel)]="descuento" name="descuento" value="{{productoEspecifico.descuento}}">
+                  <ion-select-option value="0">0%</ion-select-option>
+                  <ion-select-option value="5">5%</ion-select-option>
+                  <ion-select-option value="10">10%</ion-select-option>
+                  <ion-select-option value="15">15%</ion-select-option>
+                  <ion-select-option value="20">20%</ion-select-option>
+                  <ion-select-option value="25">25%</ion-select-option>
+                  <ion-select-option value="30">30%</ion-select-option>
+                  <ion-select-option value="35">35%</ion-select-option>
+                  <ion-select-option value="40">40%</ion-select-option>
+                  <ion-select-option value="45">45%</ion-select-option>
+                  <ion-select-option value="50">50%</ion-select-option>
+                </ion-select>
+              </ion-item>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+
+
+
+    </ion-item>
+    
+
+
+  </ion-card>
+  
+
+  
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-button fill="outline" (click)="actualizar()" expand="block">Actualizar</ion-button>
+      </ion-col>
+      <ion-col>
+        <ion-button fill="outline" id="open-modal" expand="block">Eliminar</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-modal trigger="open-modal" [initialBreakpoint]="1" [breakpoints]="[0, 1]">
+    <ng-template>
+      <div class="block">
+        <div class="centrado"> realizar esta acción estara eliminando el producto de manera permanente
+        <br>
+        <br>
+        ¿Desea Continuar?
+      </div>
+    </div>
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-button fill="outline"
+            color="danger" (click)="eliminar()">{{textoConfirmacion}}</ion-button>
+          </ion-col>
+
+          <ion-col>
+            <ion-button fill="outline"
+            color="danger" (click)="confirmacionEliminar()">Cancelar</ion-button>
+          </ion-col>
+    
+        </ion-row>
+      </ion-grid>
+    </ng-template>
+  </ion-modal>
+
+</ion-content>
